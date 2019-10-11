@@ -5,12 +5,12 @@ WORKDIR /app
 
 # Copia csproj do seu ambiente para o contâiner
 COPY *.csproj ./
-#Executa comando
+#Executa os comandos dentro do container
 RUN dotnet restore
 
-# Copia arquivos do seu ambiente para o contâiner
+#Copia arquivos do seu ambiente para o container
 COPY . ./
-#Executa comando
+#Executa os comandos dentro do container
 RUN dotnet publish -c Release -o out
 
 #define a imagem runtime
